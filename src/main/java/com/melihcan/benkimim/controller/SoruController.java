@@ -6,15 +6,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static com.melihcan.benkimim.constants.RestEndPoints.*;
+
+
 @RestController
-@RequestMapping("/soru")
+@RequestMapping(SORU)
 @RequiredArgsConstructor
 public class SoruController {
 
     private final SoruService soruService;
 
 
-    @PostMapping("/soruolustur")
+    @PostMapping(SORUOLUSTUR)
     @CrossOrigin(origins = "*")
     public ResponseEntity<String>soruOlustur(@RequestBody SoruOlusturRequestDto dto){
         soruService.soruOlustur(dto);

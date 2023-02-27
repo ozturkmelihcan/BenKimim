@@ -7,14 +7,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import static com.melihcan.benkimim.constants.RestEndPoints.*;
+
 @RestController
-@RequestMapping("/katilim")
+@RequestMapping(KATILIM)
 @RequiredArgsConstructor
 public class KatilimController {
 
     private final KatilimService katilimService;
 
-    @PostMapping("/katilimci")
+    @PostMapping(KATILIMCI)
     @CrossOrigin(origins = "*")
     public ResponseEntity<String> katilimciekle(@RequestBody KatilimRequestDto dto){
         katilimService.katilimciEkle(dto);

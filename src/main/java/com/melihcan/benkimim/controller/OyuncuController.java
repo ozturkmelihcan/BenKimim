@@ -8,18 +8,18 @@ import com.melihcan.benkimim.service.OyuncuService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import static com.melihcan.benkimim.constants.RestEndPoints.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/oyuncu")
+@RequestMapping(OYUNCU)
 @RequiredArgsConstructor
 public class OyuncuController {
 
     private final OyuncuService oyuncuService;
 
-    @PostMapping("/uyeol")
+    @PostMapping(UYEOL)
     @CrossOrigin(origins = "*")
     public ResponseEntity<OyuncuUyeOlRequestDto> oyuncuOlustur(@RequestBody OyuncuUyeOlRequestDto dto){
         oyuncuService.uyeOl(dto);
